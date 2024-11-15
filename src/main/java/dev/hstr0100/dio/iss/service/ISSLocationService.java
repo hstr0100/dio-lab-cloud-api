@@ -62,10 +62,6 @@ public class ISSLocationService {
         double closestLon = Math.max(lonMin, Math.min(issLon, lonMax));
 
         // Use the Haversine formula to calculate the distance
-        return calculateISSDistanceToCity(issLat, issLon, closestLat, closestLon);
-    }
-
-    private double calculateISSDistanceToCity(double issLat, double issLon, double cityLat, double cityLon) {
-        return Haversine.calculateDistanceKM(issLat, issLon, cityLat, cityLon);
+        return Haversine.calculateDistanceKM(issLat, issLon, closestLat, closestLon);
     }
 }

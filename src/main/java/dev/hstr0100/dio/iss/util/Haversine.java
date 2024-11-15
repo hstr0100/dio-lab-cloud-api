@@ -5,10 +5,6 @@ package dev.hstr0100.dio.iss.util;
  */
 public final class Haversine {
 
-    private Haversine() {
-
-    }
-
     public static double calculateDistanceKM(double lat1, double lng1, double lat2, double lng2) {
         int r = 6371; // Average radius of the earth in km
 
@@ -22,5 +18,8 @@ public final class Haversine {
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
         return r * c;// Distance in km
+    }
+
+    private Haversine() {
     }
 }
