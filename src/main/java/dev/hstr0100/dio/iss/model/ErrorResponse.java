@@ -8,5 +8,4 @@ public class ErrorResponse extends AbstractResponse {
     public ErrorResponse(int statusCode, String message) {
         super(statusCode, message);
     }
-
 }

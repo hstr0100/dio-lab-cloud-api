@@ -76,5 +76,4 @@ public class CityRetrieveService {
 
         return city;
     }
-
 }

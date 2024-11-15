@@ -1,4 +1,4 @@
-package dev.hstr0100.dio.gof;
+package dev.hstr0100.dio.iss;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

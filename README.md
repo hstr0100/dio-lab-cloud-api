@@ -113,11 +113,11 @@ This project demonstrates API integration, caching, and distance calculation usi
 
 2.  **Install Dependencies:**
 
-      `./mvwd clean install`
+      `./mvnw clean install`
 
 3.  **Run the Application:**
 
-      `./mvwd spring-boot:run`
+      `./mvnw spring-boot:run`
 
 4.  **Access Endpoints:**
 
