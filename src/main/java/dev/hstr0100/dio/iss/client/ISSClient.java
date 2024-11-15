@@ -1,4 +1,4 @@
-package dev.hstr0100.dio.iss.service;
+package dev.hstr0100.dio.iss.client;
 
 import dev.hstr0100.dio.iss.dto.ISSLocationDTO;
 import org.springframework.cloud.openfeign.FeignClient;

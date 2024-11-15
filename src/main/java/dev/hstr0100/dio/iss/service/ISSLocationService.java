@@ -1,9 +1,9 @@
-package dev.hstr0100.dio.iss.service.impl;
+package dev.hstr0100.dio.iss.service;
 
 import dev.hstr0100.dio.iss.dto.ISSLocationDTO;
 import dev.hstr0100.dio.iss.model.City;
 import dev.hstr0100.dio.iss.model.ISSDistanceResponse;
-import dev.hstr0100.dio.iss.service.ISSClient;
+import dev.hstr0100.dio.iss.client.ISSClient;
 import dev.hstr0100.dio.iss.util.CityNotFoundException;
 import dev.hstr0100.dio.iss.util.Haversine;
 import dev.hstr0100.dio.iss.util.ISSServiceUnavailableException;

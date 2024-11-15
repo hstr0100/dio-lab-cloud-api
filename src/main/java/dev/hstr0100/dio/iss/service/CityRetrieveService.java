@@ -1,10 +1,10 @@
-package dev.hstr0100.dio.iss.service.impl;
+package dev.hstr0100.dio.iss.service;
 
 import dev.hstr0100.dio.iss.dto.CityDTO;
 import dev.hstr0100.dio.iss.model.City;
 import dev.hstr0100.dio.iss.model.CityResponse;
 import dev.hstr0100.dio.iss.repository.CityRepository;
-import dev.hstr0100.dio.iss.service.CityRetrieveClient;
+import dev.hstr0100.dio.iss.client.CityRetrieveClient;
 import dev.hstr0100.dio.iss.util.CityNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
