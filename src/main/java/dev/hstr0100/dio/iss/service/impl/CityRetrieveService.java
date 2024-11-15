@@ -2,6 +2,7 @@ package dev.hstr0100.dio.iss.service.impl;
 
 import dev.hstr0100.dio.iss.dto.CityDTO;
 import dev.hstr0100.dio.iss.model.City;
+import dev.hstr0100.dio.iss.model.CityResponse;
 import dev.hstr0100.dio.iss.repository.CityRepository;
 import dev.hstr0100.dio.iss.service.CityRetrieveClient;
 import dev.hstr0100.dio.iss.util.CityNotFoundException;
@@ -20,6 +21,12 @@ public class CityRetrieveService {
 
     @Autowired
     private CityRetrieveClient cityRetrievalService;
+    
+    public CityResponse retrieveCityResponseByName(String cityName) {
+        City city = retrieveCityByName(cityName);
+        
+        return new CityResponse("Success",  200, city);
+    }
 
     public City retrieveCityByName(String cityName) {
         // Try to find the city in the database

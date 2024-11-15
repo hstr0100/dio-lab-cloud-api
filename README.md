@@ -30,15 +30,19 @@ This project demonstrates API integration, caching, and distance calculation usi
 **Example Response:**
 
     {
-      "latitude": -25.4295963,
-      "longitude": -49.2712724,
-      "name": "Curitiba",
-      "city_id": 1,
-      "display_name": "Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
-      "bb_latitude_1": -25.6435043,
-      "bb_latitude_2": -25.3450768,
-      "bb_longitude_1": -49.38914,
-      "bb_longitude_2": -49.1843182
+        "message":"Success",
+        "status_code":200,
+        "city_data":{
+            "latitude":-25.4295963,
+            "longitude":-49.2712724,
+            "name":"Curitiba",
+            "city_id":1,
+            "display_name":"Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
+            "bb_latitude_1":-25.6435043,
+            "bb_latitude_2":-25.3450768,
+            "bb_longitude_1":-49.38914,
+            "bb_longitude_2":-49.1843182
+        }
     }
 
 ### 2. **GET /iss**
@@ -69,12 +73,22 @@ This project demonstrates API integration, caching, and distance calculation usi
 **Example Response:**
 
     {
-        "message": "Success",
-        "city_name": "Curitiba",
-        "current_iss_distance_km": 7497.098253051845,
-        "current_iss_distance_mi": 4658.479438597078,
-        "current_iss_distance_nm": 4048.1106814231152,
-        "status_code": 200
+        "message":"Success",
+        "status_code":200,
+        "city_data":{
+            "latitude":-25.4295963,
+            "longitude":-49.2712724,
+            "name":"Curitiba",
+            "city_id":1,
+            "display_name":"Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
+            "bb_latitude_1":-25.6435043,
+            "bb_latitude_2":-25.3450768,
+            "bb_longitude_1":-49.38914,
+            "bb_longitude_2":-49.1843182
+        },
+        "current_iss_distance_km":9161.907383234657,
+        "current_iss_distance_mi":5692.943552627902,
+        "current_iss_distance_nm":4947.036024929235
     }
     
 

@@ -9,9 +9,12 @@ public class ISSDistanceResponse {
 
     @JsonProperty("message")
     private String message;
+    
+    @JsonProperty("status_code")
+    private int statusCode;
 
-    @JsonProperty("city_name")
-    private String cityName;
+    @JsonProperty("city_data")
+    private City cityData;
 
     @JsonProperty("current_iss_distance_km")
     private double currentDistanceKm;
@@ -22,17 +25,15 @@ public class ISSDistanceResponse {
     @JsonProperty("current_iss_distance_nm")
     private double currentDistanceNm;
 
-    @JsonProperty("status_code")
-    private int statusCode;
 
-    public ISSDistanceResponse(String message, String cityName, double currentDistanceKm, int statusCode) {
+    public ISSDistanceResponse(String message, int statusCode, City cityData, double currentDistanceKm) {
         this.message = message;
-        this.cityName = cityName;
+        this.statusCode = statusCode;
+        this.cityData = cityData;
         this.currentDistanceKm = currentDistanceKm;
         // TODO: helper methods
         this.currentDistanceMi = currentDistanceKm * 0.621371; // km to miles
         this.currentDistanceNm = currentDistanceKm * 0.539957; // km to nautical miles
-        this.statusCode = statusCode;
     }
 
     public String getMessage() {
@@ -42,13 +43,21 @@ public class ISSDistanceResponse {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    public String getCityName() {
-        return cityName;
+    
+    public int getStatusCode() {
+        return statusCode;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
+    }
+
+    public City getCityData() {
+        return cityData;
+    }
+
+    public void setCityData(City cityData) {
+        this.cityData = cityData;
     }
 
     public double getCurrentDistanceKm() {
@@ -75,23 +84,16 @@ public class ISSDistanceResponse {
         this.currentDistanceNm = currentDistanceNm;
     }
 
-    public int getStatusCode() {
-        return statusCode;
-    }
-
-    public void setStatusCode(int statusCode) {
-        this.statusCode = statusCode;
-    }
 
     @Override
     public String toString() {
         return "ISSDistanceResponse{"
             + "message='" + message + '\''
-            + ", cityName='" + cityName + '\''
+            + ", statusCode=" + statusCode
+            + ", cityData=" + cityData
             + ", currentDistanceKm=" + currentDistanceKm
             + ", currentDistanceMi=" + currentDistanceMi
             + ", currentDistanceNm=" + currentDistanceNm
-            + ", statusCode=" + statusCode
             + '}';
     }
 }

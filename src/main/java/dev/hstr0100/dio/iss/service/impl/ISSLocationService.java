@@ -47,7 +47,7 @@ public class ISSLocationService {
         double distanceToClosestVector = calculateClosestDistanceFromIssToCity(issLat, issLon, city);
 
         // Return the calculated distance
-        return new ISSDistanceResponse("Success", cityName, distanceToClosestVector, 200);
+        return new ISSDistanceResponse("Success", 200, city, distanceToClosestVector);
     }
 
     private double calculateClosestDistanceFromIssToCity(double issLat, double issLon, City city) {
