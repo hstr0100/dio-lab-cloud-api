@@ -90,9 +90,11 @@ This project demonstrates API integration, caching, and distance calculation usi
             "min_longitude": -49.38914,
             "max_longitude": -49.1843182
         },
-        "iss_distance_kilometers": 15163.839314218465,
-        "iss_distance_miles": 9422.369998515242,
-        "iss_distance_nautical_miles": 8187.82118458746
+        "iss_distance": {
+            "kilometers": 4771.52700418316,
+            "miles": 2964.888506116294,
+            "nautical_miles": 2576.4194065977267
+        }
     }
 
 
