@@ -30,7 +30,7 @@ public class CityRetrieveService {
 
     public City retrieveCityByName(String cityName) {
         // Try to find the city in the database
-        City city = cityRepository.findByName(cityName);
+        City city = cityRepository.findFirstByName(cityName);
         System.out.println("City in DB: " + city);
 
         if (city == null) {
