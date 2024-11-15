@@ -5,7 +5,7 @@ import dev.hstr0100.dio.iss.dto.CityDTO;
 import dev.hstr0100.dio.iss.model.City;
 import dev.hstr0100.dio.iss.model.DTOResponse;
 import dev.hstr0100.dio.iss.repository.CityRepository;
-import dev.hstr0100.dio.iss.util.CityNotFoundException;
+import dev.hstr0100.dio.iss.handler.exception.CityNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

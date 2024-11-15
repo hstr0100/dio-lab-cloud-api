@@ -5,9 +5,9 @@ import dev.hstr0100.dio.iss.dto.ISSLocationDTO;
 import dev.hstr0100.dio.iss.model.City;
 import dev.hstr0100.dio.iss.model.DTOResponse;
 import dev.hstr0100.dio.iss.model.ISSDistanceResponse;
-import dev.hstr0100.dio.iss.util.CityNotFoundException;
+import dev.hstr0100.dio.iss.handler.exception.CityNotFoundException;
 import dev.hstr0100.dio.iss.util.Haversine;
-import dev.hstr0100.dio.iss.util.ISSServiceUnavailableException;
+import dev.hstr0100.dio.iss.handler.exception.ISSServiceUnavailableException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

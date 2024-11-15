@@ -1,7 +1,7 @@
 package dev.hstr0100.dio.iss.handler;
 
 import dev.hstr0100.dio.iss.model.ErrorResponse;
-import dev.hstr0100.dio.iss.util.CityNotFoundException;
+import dev.hstr0100.dio.iss.handler.exception.CityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
