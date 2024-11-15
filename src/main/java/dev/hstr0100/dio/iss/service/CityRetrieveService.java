@@ -21,11 +21,11 @@ public class CityRetrieveService {
 
     @Autowired
     private CityRetrieveClient cityRetrievalService;
-    
+
     public CityResponse retrieveCityResponseByName(String cityName) {
         City city = retrieveCityByName(cityName);
-        
-        return new CityResponse("Success",  200, city);
+
+        return new CityResponse("Success", 200, city);
     }
 
     public City retrieveCityByName(String cityName) {
@@ -49,10 +49,19 @@ public class CityRetrieveService {
                 city.setLongitude(Double.parseDouble(retrieved.getLon()));
 
                 // This is a demo application, hence why this is not handling any edge cases
-                city.setBbLatitude1(Double.parseDouble(retrieved.getBoundingBox().get(0)));
-                city.setBbLatitude2(Double.parseDouble(retrieved.getBoundingBox().get(1)));
-                city.setBbLongitude1(Double.parseDouble(retrieved.getBoundingBox().get(2)));
-                city.setBbLongitude2(Double.parseDouble(retrieved.getBoundingBox().get(3)));
+                List<String> boundingBox = retrieved.getBoundingBox();
+                city.setMinLatitude(Math.min(
+                    Double.parseDouble(boundingBox.get(0)),
+                    Double.parseDouble(boundingBox.get(1))));
+                city.setMaxLatitude(Math.max(
+                    Double.parseDouble(boundingBox.get(0)), 
+                    Double.parseDouble(boundingBox.get(1))));
+                city.setMinLongitude(Math.min(
+                    Double.parseDouble(boundingBox.get(2)),
+                    Double.parseDouble(boundingBox.get(3))));
+                city.setMaxLongitude(Math.max(
+                    Double.parseDouble(boundingBox.get(2)),
+                    Double.parseDouble(boundingBox.get(3))));
 
                 System.out.println("New City Obj: " + city);
 

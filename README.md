@@ -38,10 +38,10 @@ This project demonstrates API integration, caching, and distance calculation usi
             "name":"Curitiba",
             "city_id":1,
             "display_name":"Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
-            "bb_latitude_1":-25.6435043,
-            "bb_latitude_2":-25.3450768,
-            "bb_longitude_1":-49.38914,
-            "bb_longitude_2":-49.1843182
+            "min_latitude":-25.6435043,
+            "max_latitude":-25.3450768,
+            "min_longitude":-49.38914,
+            "max_longitude":-49.1843182
         }
     }
 
@@ -81,10 +81,10 @@ This project demonstrates API integration, caching, and distance calculation usi
             "name":"Curitiba",
             "city_id":1,
             "display_name":"Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
-            "bb_latitude_1":-25.6435043,
-            "bb_latitude_2":-25.3450768,
-            "bb_longitude_1":-49.38914,
-            "bb_longitude_2":-49.1843182
+            "min_latitude":-25.6435043,
+            "max_latitude":-25.3450768,
+            "min_longitude":-49.38914,
+            "max_longitude":-49.1843182
         },
         "current_iss_distance_km":9161.907383234657,
         "current_iss_distance_mi":5692.943552627902,

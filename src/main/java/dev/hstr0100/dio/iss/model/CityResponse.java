@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class CityResponse {
 
-    @JsonProperty("message")
     private String message;
 
     @JsonProperty("status_code")

@@ -51,10 +51,10 @@ public class ISSLocationService {
     }
 
     private double calculateClosestDistanceFromIssToCity(double issLat, double issLon, City city) {
-        double latMin = city.getBbLatitude1();
-        double latMax = city.getBbLatitude2();
-        double lonMin = city.getBbLongitude1();
-        double lonMax = city.getBbLongitude2();
+        double latMin = city.getMinLatitude();
+        double latMax = city.getMaxLatitude();
+        double lonMin = city.getMinLongitude();
+        double lonMax = city.getMaxLongitude();
 
         // Find the closest latitude and longitude
         double closestLat = Math.max(latMin, Math.min(issLat, latMax));
@@ -65,6 +65,6 @@ public class ISSLocationService {
     }
 
     private double calculateISSDistanceToCity(double issLat, double issLon, double cityLat, double cityLon) {
-        return Haversine.calculateDistanceInKM(issLat, issLon, cityLat, cityLon);
+        return Haversine.calculateDistanceKM(issLat, issLon, cityLat, cityLon);
     }
 }

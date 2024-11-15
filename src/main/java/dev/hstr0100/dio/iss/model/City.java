@@ -7,7 +7,7 @@ import jakarta.persistence.*;
  * @author Gabriel / hstr0100 / vertx010
  */
 @Entity
-@Table(name = "cities")
+@Table(name = "tb_cities")
 public class City {
 
     @Id
@@ -16,34 +16,31 @@ public class City {
     @JsonProperty("city_id")
     private Long id;
 
-    @Column(name = "latitude")
     private double latitude;
 
-    @Column(name = "longitude")
     private double longitude;
 
-    @Column(name = "name")
     private String name;
 
     @Column(name = "display_name")
     @JsonProperty("display_name")
     private String displayName;
 
-    @Column(name = "bb_latitude_1")
-    @JsonProperty("bb_latitude_1")
-    private double bbLatitude1;
+    @Column(name = "min_latitude")
+    @JsonProperty("min_latitude")
+    private double minLatitude;
 
-    @Column(name = "bb_latitude_2")
-    @JsonProperty("bb_latitude_2")
-    private double bbLatitude2;
+    @Column(name = "max_latitude")
+    @JsonProperty("max_latitude")
+    private double maxLatitude;
 
-    @Column(name = "bb_longitude_1")
-    @JsonProperty("bb_longitude_1")
-    private double bbLongitude1;
+    @Column(name = "min_longitude")
+    @JsonProperty("min_longitude")
+    private double minLongitude;
 
-    @Column(name = "bb_longitude_2")
-    @JsonProperty("bb_longitude_2")
-    private double bbLongitude2;
+    @Column(name = "max_longitude")
+    @JsonProperty("max_longitude")
+    private double maxLongitude;
 
     public Long getId() {
         return id;
@@ -85,36 +82,36 @@ public class City {
         this.displayName = displayName;
     }
 
-    public double getBbLatitude1() {
-        return bbLatitude1;
+    public double getMinLatitude() {
+        return minLatitude;
     }
 
-    public void setBbLatitude1(double bbLatitude1) {
-        this.bbLatitude1 = bbLatitude1;
+    public void setMinLatitude(double minLatitude) {
+        this.minLatitude = minLatitude;
     }
 
-    public double getBbLatitude2() {
-        return bbLatitude2;
+    public double getMaxLatitude() {
+        return maxLatitude;
     }
 
-    public void setBbLatitude2(double bbLatitude2) {
-        this.bbLatitude2 = bbLatitude2;
+    public void setMaxLatitude(double maxLatitude) {
+        this.maxLatitude = maxLatitude;
     }
 
-    public double getBbLongitude1() {
-        return bbLongitude1;
+    public double getMinLongitude() {
+        return minLongitude;
     }
 
-    public void setBbLongitude1(double bbLongitude1) {
-        this.bbLongitude1 = bbLongitude1;
+    public void setMinLongitude(double minLongitude) {
+        this.minLongitude = minLongitude;
     }
 
-    public double getBbLongitude2() {
-        return bbLongitude2;
+    public double getMaxLongitude() {
+        return maxLongitude;
     }
 
-    public void setBbLongitude2(double bbLongitude2) {
-        this.bbLongitude2 = bbLongitude2;
+    public void setMaxLongitude(double maxLongitude) {
+        this.maxLongitude = maxLongitude;
     }
 
     @Override
@@ -125,10 +122,10 @@ public class City {
             + ", longitude=" + longitude
             + ", name='" + name + '\''
             + ", displayName='" + displayName + '\''
-            + ", bbLatitude1=" + bbLatitude1
-            + ", bbLatitude2=" + bbLatitude2
-            + ", bbLongitude1=" + bbLongitude1
-            + ", bbLongitude2=" + bbLongitude2
+            + ", minLatitude=" + minLatitude
+            + ", maxLatitude=" + maxLatitude
+            + ", minLongitude=" + minLongitude
+            + ", maxLongitude=" + maxLongitude
             + '}';
     }
 

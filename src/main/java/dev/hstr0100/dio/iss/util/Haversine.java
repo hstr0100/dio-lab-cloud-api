@@ -9,7 +9,7 @@ public final class Haversine {
 
     }
 
-    public static double calculateDistanceInKM(double lat1, double lng1, double lat2, double lng2) {
+    public static double calculateDistanceKM(double lat1, double lng1, double lat2, double lng2) {
         int r = 6371; // Average radius of the earth in km
 
         double dLat = Math.toRadians(lat2 - lat1);
