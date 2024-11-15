@@ -59,7 +59,7 @@ This project demonstrates API integration, caching, and distance calculation usi
 
 ### 2. **GET /iss/{cityName}**
 
--   Retrieves the coordinates of the specified city from the OpenStreetMap API and the ISS’s current location, then calculates the distance between the two.
+-   Retrieves the coordinates of the specified city from the OpenStreetMap API and the ISS's current location, then calculates the distance between the two.
 -   Distance is provided in kilometers, miles, and nautical miles.
 
 **Example Request:**
@@ -76,6 +76,9 @@ This project demonstrates API integration, caching, and distance calculation usi
         "current_iss_distance_nm": 4048.1106814231152,
         "status_code": 200
     }
+    
+
+## Setup
 
 ### Prerequisites
 
@@ -85,18 +88,18 @@ This project demonstrates API integration, caching, and distance calculation usi
 
 1.  **Clone the Repository:**
 
-      git clone https://github.com/hstr0100/dio-lab-padroes-projeto-spring.git
-      cd dio-lab-padroes-projeto-spring
+      `git clone https://github.com/hstr0100/dio-lab-padroes-projeto-spring.git`
+      `cd dio-lab-padroes-projeto-spring`
 
 2.  **Install Dependencies:**
 
-      ./mvwd clean install
+      `./mvwd clean install`
 
 3.  **Run the Application:**
 
-      ./mvwd spring-boot:run
+      `./mvwd spring-boot:run`
 
 4.  **Access Endpoints:**
 
-      Application will run by default at http://localhost:8080.
+      `Application will run by default at http://localhost:8080.`
 
