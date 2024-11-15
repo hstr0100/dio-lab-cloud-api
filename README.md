@@ -33,7 +33,6 @@ This project demonstrates API integration, caching, and distance calculation usi
         "message": "Success",
         "status_code": 200,
         "data": {
-            "city_id": 1,
             "name": "Curitiba",
             "display_name": "Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
             "latitude": -25.4295963,
@@ -82,7 +81,6 @@ This project demonstrates API integration, caching, and distance calculation usi
         "message": "Success",
         "status_code": 200,
         "city_data": {
-            "city_id": 1,
             "name": "Curitiba",
             "display_name": "Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
             "latitude": -25.4295963,
@@ -121,5 +119,5 @@ This project demonstrates API integration, caching, and distance calculation usi
 
 4.  **Access Endpoints:**
 
-      `Application will run by default at http://localhost:8080.`
+      Application will run by default at `http://localhost:8080.`
 

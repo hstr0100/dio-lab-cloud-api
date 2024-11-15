@@ -1,5 +1,6 @@
 package dev.hstr0100.dio.iss.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
@@ -13,7 +14,7 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "city_id")
-    @JsonProperty("city_id")
+    @JsonIgnore
     private Long id;
 
     private String name;
@@ -21,7 +22,7 @@ public class City {
     @Column(name = "display_name")
     @JsonProperty("display_name")
     private String displayName;
-    
+
     private double latitude;
 
     private double longitude;
