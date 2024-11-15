@@ -1,6 +1,6 @@
 # Demo SpringBoot Application for DIO Lab Project Patterns
 
-This project is a Spring Boot application developed as a demo for the Digital Innovation One (DIO) Lab Project on Design Patterns. It provides RESTful endpoints to retrieve geographical coordinates for cities and calculate the distance between a given city and the current location of the International Space Station (ISS).
+This project is a Spring Boot application developed as a demo for the Digital Innovation One (DIO) Lab Project on Project Patterns. It provides RESTful endpoints to retrieve geographical coordinates for cities and calculate the distance between a given city and the current location of the International Space Station (ISS).
 
 ### Project Features
 
