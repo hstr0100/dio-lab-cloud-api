@@ -16,15 +16,15 @@ public class City {
     @JsonProperty("city_id")
     private Long id;
 
-    private double latitude;
-
-    private double longitude;
-
     private String name;
 
     @Column(name = "display_name")
     @JsonProperty("display_name")
     private String displayName;
+    
+    private double latitude;
+
+    private double longitude;
 
     @Column(name = "min_latitude")
     @JsonProperty("min_latitude")

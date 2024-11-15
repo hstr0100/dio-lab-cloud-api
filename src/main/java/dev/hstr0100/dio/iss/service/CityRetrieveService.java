@@ -1,10 +1,10 @@
 package dev.hstr0100.dio.iss.service;
 
+import dev.hstr0100.dio.iss.client.CityRetrieveClient;
 import dev.hstr0100.dio.iss.dto.CityDTO;
 import dev.hstr0100.dio.iss.model.City;
-import dev.hstr0100.dio.iss.model.CityResponse;
+import dev.hstr0100.dio.iss.model.DTOResponse;
 import dev.hstr0100.dio.iss.repository.CityRepository;
-import dev.hstr0100.dio.iss.client.CityRetrieveClient;
 import dev.hstr0100.dio.iss.util.CityNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +22,10 @@ public class CityRetrieveService {
     @Autowired
     private CityRetrieveClient cityRetrievalService;
 
-    public CityResponse retrieveCityResponseByName(String cityName) {
+    public DTOResponse<City> retrieveCityResponseByName(String cityName) {
         City city = retrieveCityByName(cityName);
 
-        return new CityResponse("Success", 200, city);
+        return new DTOResponse<>(200, "Success", city);
     }
 
     public City retrieveCityByName(String cityName) {
@@ -54,7 +54,7 @@ public class CityRetrieveService {
                     Double.parseDouble(boundingBox.get(0)),
                     Double.parseDouble(boundingBox.get(1))));
                 city.setMaxLatitude(Math.max(
-                    Double.parseDouble(boundingBox.get(0)), 
+                    Double.parseDouble(boundingBox.get(0)),
                     Double.parseDouble(boundingBox.get(1))));
                 city.setMinLongitude(Math.min(
                     Double.parseDouble(boundingBox.get(2)),

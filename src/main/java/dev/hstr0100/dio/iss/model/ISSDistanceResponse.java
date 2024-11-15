@@ -5,51 +5,27 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * @author Gabriel / hstr0100 / vertx010
  */
-public class ISSDistanceResponse {
-
-    @JsonProperty("message")
-    private String message;
-    
-    @JsonProperty("status_code")
-    private int statusCode;
+public class ISSDistanceResponse extends AbstractResponse {
 
     @JsonProperty("city_data")
     private City cityData;
 
-    @JsonProperty("current_iss_distance_km")
+    @JsonProperty("iss_distance_kilometers")
     private double currentDistanceKm;
 
-    @JsonProperty("current_iss_distance_mi")
+    @JsonProperty("iss_distance_miles")
     private double currentDistanceMi;
 
-    @JsonProperty("current_iss_distance_nm")
+    @JsonProperty("iss_distance_nautical_miles")
     private double currentDistanceNm;
 
-
-    public ISSDistanceResponse(String message, int statusCode, City cityData, double currentDistanceKm) {
-        this.message = message;
-        this.statusCode = statusCode;
+    public ISSDistanceResponse(int statusCode, String message, City cityData, double currentDistanceKm) {
+        super(statusCode, message);
         this.cityData = cityData;
         this.currentDistanceKm = currentDistanceKm;
         // TODO: helper methods
         this.currentDistanceMi = currentDistanceKm * 0.621371; // km to miles
         this.currentDistanceNm = currentDistanceKm * 0.539957; // km to nautical miles
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-    
-    public int getStatusCode() {
-        return statusCode;
-    }
-
-    public void setStatusCode(int statusCode) {
-        this.statusCode = statusCode;
     }
 
     public City getCityData() {
@@ -84,12 +60,9 @@ public class ISSDistanceResponse {
         this.currentDistanceNm = currentDistanceNm;
     }
 
-
     @Override
     public String toString() {
         return "ISSDistanceResponse{"
-            + "message='" + message + '\''
-            + ", statusCode=" + statusCode
             + ", cityData=" + cityData
             + ", currentDistanceKm=" + currentDistanceKm
             + ", currentDistanceMi=" + currentDistanceMi

@@ -1,9 +1,10 @@
 package dev.hstr0100.dio.iss.service;
 
+import dev.hstr0100.dio.iss.client.ISSClient;
 import dev.hstr0100.dio.iss.dto.ISSLocationDTO;
 import dev.hstr0100.dio.iss.model.City;
+import dev.hstr0100.dio.iss.model.DTOResponse;
 import dev.hstr0100.dio.iss.model.ISSDistanceResponse;
-import dev.hstr0100.dio.iss.client.ISSClient;
 import dev.hstr0100.dio.iss.util.CityNotFoundException;
 import dev.hstr0100.dio.iss.util.Haversine;
 import dev.hstr0100.dio.iss.util.ISSServiceUnavailableException;
@@ -22,13 +23,13 @@ public class ISSLocationService {
     @Autowired
     private ISSClient issLocationService;
 
-    public ISSLocationDTO getCurrentISSLocation() {
+    public DTOResponse<ISSLocationDTO> getCurrentISSLocationResponse() {
         ISSLocationDTO issLocation = issLocationService.getCurrentLocation();
         if (issLocation == null) {
             throw new ISSServiceUnavailableException("ISS Location service is unavailable at the moment");
         }
 
-        return issLocation;
+        return new DTOResponse<>(200, "Successs", issLocation);
     }
 
     public ISSDistanceResponse retrieveCurrentISSDistance(String cityName) {
@@ -37,7 +38,7 @@ public class ISSLocationService {
             throw new CityNotFoundException("City " + cityName + " does not exist");
         }
 
-        ISSLocationDTO issLocation = getCurrentISSLocation();
+        ISSLocationDTO issLocation = issLocationService.getCurrentLocation();
 
         // Retrieve the ISS current location
         double issLat = issLocation.getIssPosition().getLatitude();
@@ -47,7 +48,7 @@ public class ISSLocationService {
         double distanceToClosestVector = calculateClosestDistanceFromIssToCity(issLat, issLon, city);
 
         // Return the calculated distance
-        return new ISSDistanceResponse("Success", 200, city, distanceToClosestVector);
+        return new ISSDistanceResponse(200, "Success", city, distanceToClosestVector);
     }
 
     private double calculateClosestDistanceFromIssToCity(double issLat, double issLon, City city) {

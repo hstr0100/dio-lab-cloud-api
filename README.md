@@ -30,18 +30,18 @@ This project demonstrates API integration, caching, and distance calculation usi
 **Example Response:**
 
     {
-        "message":"Success",
-        "status_code":200,
-        "city_data":{
-            "latitude":-25.4295963,
-            "longitude":-49.2712724,
-            "name":"Curitiba",
-            "city_id":1,
-            "display_name":"Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
-            "min_latitude":-25.6435043,
-            "max_latitude":-25.3450768,
-            "min_longitude":-49.38914,
-            "max_longitude":-49.1843182
+        "message": "Success",
+        "status_code": 200,
+        "data": {
+            "city_id": 1,
+            "name": "Curitiba",
+            "display_name": "Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
+            "latitude": -25.4295963,
+            "longitude": -49.2712724,
+            "min_latitude": -25.6435043,
+            "max_latitude": -25.3450768,
+            "min_longitude": -49.38914,
+            "max_longitude": -49.1843182
         }
     }
 
@@ -56,9 +56,15 @@ This project demonstrates API integration, caching, and distance calculation usi
 **Example Response:**
 
     {
-        "latitude": 10.34567,
-        "longitude": -50.98765,
-        "timestamp": 1670450820
+        "message": "Successs",
+        "status_code": 200,
+        "data": {
+            "timestamp": 1731653080,
+            "iss_position": {
+                "longitude": 177.1061,
+                "latitude": 42.3922
+            }
+        }
     }
 
 ### 2. **GET /iss/{cityName}**
@@ -73,24 +79,24 @@ This project demonstrates API integration, caching, and distance calculation usi
 **Example Response:**
 
     {
-        "message":"Success",
-        "status_code":200,
-        "city_data":{
-            "latitude":-25.4295963,
-            "longitude":-49.2712724,
-            "name":"Curitiba",
-            "city_id":1,
-            "display_name":"Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
-            "min_latitude":-25.6435043,
-            "max_latitude":-25.3450768,
-            "min_longitude":-49.38914,
-            "max_longitude":-49.1843182
+        "message": "Success",
+        "status_code": 200,
+        "city_data": {
+            "city_id": 1,
+            "name": "Curitiba",
+            "display_name": "Curitiba, Região Geográfica Imediata de Curitiba, Região Metropolitana de Curitiba, Região Geográfica Intermediária de Curitiba, Paraná, Região Sul, Brasil",
+            "latitude": -25.4295963,
+            "longitude": -49.2712724,
+            "min_latitude": -25.6435043,
+            "max_latitude": -25.3450768,
+            "min_longitude": -49.38914,
+            "max_longitude": -49.1843182
         },
-        "current_iss_distance_km":9161.907383234657,
-        "current_iss_distance_mi":5692.943552627902,
-        "current_iss_distance_nm":4947.036024929235
+        "iss_distance_kilometers": 15163.839314218465,
+        "iss_distance_miles": 9422.369998515242,
+        "iss_distance_nautical_miles": 8187.82118458746
     }
-    
+
 
 ## Setup
 
