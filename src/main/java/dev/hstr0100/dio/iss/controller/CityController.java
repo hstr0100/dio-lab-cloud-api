@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CityController {
 
     @Autowired
-    private CityRetrieveService cityRetrieveServiceImpl;
+    private CityRetrieveService cityRetrieveService;
 
     @GetMapping({"/", ""})
     public DTOResponse<City> getDefaultCity() {
@@ -27,6 +27,6 @@ public class CityController {
 
     @GetMapping("/{cityName}")
     public DTOResponse<City> getCityByName(@PathVariable String cityName) {
-        return cityRetrieveServiceImpl.retrieveCityResponseByName(cityName);
+        return cityRetrieveService.retrieveCityResponseByName(cityName);
     }
 }

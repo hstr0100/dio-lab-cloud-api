@@ -18,15 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class ISSLocationController {
 
     @Autowired
-    private ISSLocationService issLocationServiceImpl;
+    private ISSLocationService issLocationService;
 
     @GetMapping({"/", ""})
     public DTOResponse<ISSLocationDTO> getISSLocation() {
-        return issLocationServiceImpl.getCurrentISSLocationResponse();
+        return issLocationService.getCurrentISSLocationResponse();
     }
 
     @GetMapping("/{cityName}")
     public ISSDistanceResponse getISSDistanceCityByName(@PathVariable String cityName) {
-        return issLocationServiceImpl.retrieveCurrentISSDistance(cityName);
+        return issLocationService.retrieveCurrentISSDistance(cityName);
     }
 }
