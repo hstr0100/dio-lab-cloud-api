@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * TODO: return ResponseEntity
+ * 
  * @author Gabriel / hstr0100 / vertx010
  */
 @RestController

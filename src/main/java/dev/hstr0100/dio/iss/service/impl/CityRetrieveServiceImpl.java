@@ -8,6 +8,8 @@ import dev.hstr0100.dio.iss.model.DTOResponse;
 import dev.hstr0100.dio.iss.repository.CityRepository;
 import dev.hstr0100.dio.iss.service.CityRetrieveService;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CityRetrieveServiceImpl implements CityRetrieveService {
+
+    private static final Logger log = LoggerFactory.getLogger(CityRetrieveServiceImpl.class.getName());
 
     @Autowired
     private CityRepository cityRepository;
@@ -34,12 +38,12 @@ public class CityRetrieveServiceImpl implements CityRetrieveService {
     public City retrieveCityByName(String cityName) {
         // Try to find the city in the database
         City city = cityRepository.findFirstByName(cityName);
-        System.out.println("City in DB: " + city);
+        log.debug("City in DB: {}", city);
 
         if (city == null) {
             // If city is not found in DB, call OpenStreetMap API
             List<CityDTO> citySearchResponse = cityRetrievalService.searchCityByName(cityName, "json", 1);
-            System.out.println("API Response: " + citySearchResponse);
+            log.debug("API Response: {}", citySearchResponse);
 
             if (!citySearchResponse.isEmpty()) {
                 CityDTO retrieved = citySearchResponse.get(0);
@@ -66,8 +70,7 @@ public class CityRetrieveServiceImpl implements CityRetrieveService {
                     Double.parseDouble(boundingBox.get(2)),
                     Double.parseDouble(boundingBox.get(3))));
 
-                System.out.println("New City Obj: " + city);
-
+                log.debug("New City Obj: {}", city);
                 // Save the city to the database
                 cityRepository.save(city);
             }
