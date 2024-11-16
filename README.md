@@ -16,6 +16,52 @@ This project demonstrates API integration, caching, and distance calculation usi
 -   **Nominatim (OpenStreetMap):** Provides geolocation data for cities.
 -   **OpenNotify ISS API:** Supplies real-time coordinates for the ISS.
 
+## Class Diagram
+
+```mermaid
+classDiagram
+    class CityDTO {
+        - String name
+        - String displayName
+        - double latitude
+        - double longitude
+        - double minLatitude
+        - double maxLatitude
+        - double minLongitude
+        - double maxLongitude
+    }
+
+    class ISSLocationDTO {
+        - long timestamp
+        - double latitude
+        - double longitude
+    }
+
+    class ISSDistanceResponse {
+        - CityDTO cityData
+        - ISSDistance issDistance
+    }
+
+    class ISSDistance {
+        - double kilometers
+        - double miles
+        - double nauticalMiles
+    }
+
+    class API {
+        + getCity(cityName: String): "/city/cityName"
+        + getISSLocation(): "/iss"
+        + getISSDistance(cityName: String): "/iss/cityName"
+    }
+
+    API --> CityDTO : "GET /city/cityName"
+    API --> ISSLocationDTO : "GET /iss"
+    API --> ISSDistanceResponse : "GET /iss/cityName"
+    ISSDistanceResponse --> CityDTO : "Contains city details"
+    ISSDistanceResponse --> ISSDistance : "Contains distance info"
+
+```
+
 ## Endpoints
 
 ### 1. **GET /city/{cityName}**
