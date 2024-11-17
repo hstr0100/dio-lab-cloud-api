@@ -154,8 +154,8 @@ classDiagram
 
 1.  **Clone the Repository:**
 
-      `git clone https://github.com/hstr0100/dio-lab-padroes-projeto-spring.git`
-      `cd dio-lab-padroes-projeto-spring`
+      `git clone https://github.com/hstr0100/dio-lab-cloud-api.git`
+      `cd dio-lab-cloud-api`
 
 2.  **Install Dependencies:**
 
