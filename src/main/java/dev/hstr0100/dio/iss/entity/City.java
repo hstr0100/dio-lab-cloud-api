@@ -1,4 +1,4 @@
-package dev.hstr0100.dio.iss.model;
+package dev.hstr0100.dio.iss.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

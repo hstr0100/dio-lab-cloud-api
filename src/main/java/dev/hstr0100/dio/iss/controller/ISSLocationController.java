@@ -1,8 +1,8 @@
 package dev.hstr0100.dio.iss.controller;
 
-import dev.hstr0100.dio.iss.dto.ISSLocationDTO;
-import dev.hstr0100.dio.iss.model.DTOResponse;
-import dev.hstr0100.dio.iss.model.ISSDistanceResponse;
+import dev.hstr0100.dio.iss.dto.ISSLocationDto;
+import dev.hstr0100.dio.iss.response.DTOResponse;
+import dev.hstr0100.dio.iss.response.ISSDistanceResponse;
 import dev.hstr0100.dio.iss.service.ISSLocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ public class ISSLocationController {
     private ISSLocationService issLocationService;
 
     @GetMapping({"/", ""})
-    public DTOResponse<ISSLocationDTO> getISSLocation() {
+    public DTOResponse<ISSLocationDto> getISSLocation() {
         return issLocationService.getCurrentISSLocationResponse();
     }
 

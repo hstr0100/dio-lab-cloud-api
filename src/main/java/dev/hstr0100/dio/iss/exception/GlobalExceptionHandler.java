@@ -1,7 +1,6 @@
-package dev.hstr0100.dio.iss.handler;
+package dev.hstr0100.dio.iss.exception;
 
-import dev.hstr0100.dio.iss.handler.exception.CityNotFoundException;
-import dev.hstr0100.dio.iss.model.ErrorResponse;
+import dev.hstr0100.dio.iss.response.ErrorResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

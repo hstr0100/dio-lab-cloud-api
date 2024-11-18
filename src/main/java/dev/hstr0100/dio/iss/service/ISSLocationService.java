@@ -1,15 +1,15 @@
 package dev.hstr0100.dio.iss.service;
 
-import dev.hstr0100.dio.iss.dto.ISSLocationDTO;
-import dev.hstr0100.dio.iss.model.DTOResponse;
-import dev.hstr0100.dio.iss.model.ISSDistanceResponse;
+import dev.hstr0100.dio.iss.dto.ISSLocationDto;
+import dev.hstr0100.dio.iss.response.DTOResponse;
+import dev.hstr0100.dio.iss.response.ISSDistanceResponse;
 
 /**
  * @author Gabriel / hstr0100 / vertx010
  */
 public interface ISSLocationService {
 
-    DTOResponse<ISSLocationDTO> getCurrentISSLocationResponse();
+    DTOResponse<ISSLocationDto> getCurrentISSLocationResponse();
 
     ISSDistanceResponse retrieveCurrentISSDistance(String cityName);
 

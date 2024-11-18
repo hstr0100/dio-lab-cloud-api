@@ -1,4 +1,4 @@
-package dev.hstr0100.dio.iss.model;
+package dev.hstr0100.dio.iss.response;
 
 /**
  * @author Gabriel / hstr0100 / vertx010

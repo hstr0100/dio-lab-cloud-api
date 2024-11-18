@@ -1,6 +1,6 @@
 package dev.hstr0100.dio.iss.client;
 
-import dev.hstr0100.dio.iss.dto.ISSLocationDTO;
+import dev.hstr0100.dio.iss.dto.ISSLocationDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface ISSClient {
 
     @GetMapping("iss-now.json")
-    ISSLocationDTO getCurrentLocation();
+    ISSLocationDto getCurrentLocation();
 
 }

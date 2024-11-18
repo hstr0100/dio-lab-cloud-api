@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * @author Gabriel / hstr0100 / vertx010
  */
-public class ISSLocationDTO {
+public class ISSLocationDto {
 
     @JsonProperty("iss_position")
     private ISSPosition issPosition;

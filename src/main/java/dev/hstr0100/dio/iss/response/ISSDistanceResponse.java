@@ -1,6 +1,8 @@
-package dev.hstr0100.dio.iss.model;
+package dev.hstr0100.dio.iss.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.hstr0100.dio.iss.entity.City;
+import dev.hstr0100.dio.iss.dto.ISSDistanceDto;
 
 /**
  * @author Gabriel / hstr0100 / vertx010
@@ -11,12 +13,12 @@ public class ISSDistanceResponse extends AbstractResponse {
     private City cityData;
 
     @JsonProperty("iss_distance")
-    private ISSDistance issDistance;
+    private ISSDistanceDto issDistance;
 
     public ISSDistanceResponse(int statusCode, String message, City cityData, double currentDistanceKm) {
         super(statusCode, message);
         this.cityData = cityData;
-        this.issDistance = new ISSDistance(currentDistanceKm);
+        this.issDistance = new ISSDistanceDto(currentDistanceKm);
     }
 
     public City getCityData() {
@@ -27,11 +29,11 @@ public class ISSDistanceResponse extends AbstractResponse {
         this.cityData = cityData;
     }
 
-    public ISSDistance getIssDistance() {
+    public ISSDistanceDto getIssDistance() {
         return issDistance;
     }
 
-    public void setIssDistance(ISSDistance issDistance) {
+    public void setIssDistance(ISSDistanceDto issDistance) {
         this.issDistance = issDistance;
     }
 

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author Gabriel / hstr0100 / vertx010
  */
-public class CityDTO {
+public class CityDto {
 
     private String lat;
     private String lon;

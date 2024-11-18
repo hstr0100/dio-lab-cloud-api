@@ -1,4 +1,4 @@
-package dev.hstr0100.dio.iss.handler.exception;
+package dev.hstr0100.dio.iss.exception;
 
 /**
  * @author Gabriel / hstr0100 / vertx010

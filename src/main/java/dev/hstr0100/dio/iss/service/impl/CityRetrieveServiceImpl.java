@@ -1,10 +1,10 @@
 package dev.hstr0100.dio.iss.service.impl;
 
 import dev.hstr0100.dio.iss.client.CityRetrieveClient;
-import dev.hstr0100.dio.iss.dto.CityDTO;
-import dev.hstr0100.dio.iss.handler.exception.CityNotFoundException;
-import dev.hstr0100.dio.iss.model.City;
-import dev.hstr0100.dio.iss.model.DTOResponse;
+import dev.hstr0100.dio.iss.dto.CityDto;
+import dev.hstr0100.dio.iss.exception.CityNotFoundException;
+import dev.hstr0100.dio.iss.entity.City;
+import dev.hstr0100.dio.iss.response.DTOResponse;
 import dev.hstr0100.dio.iss.repository.CityRepository;
 import dev.hstr0100.dio.iss.service.CityRetrieveService;
 import java.util.List;
@@ -42,11 +42,11 @@ public class CityRetrieveServiceImpl implements CityRetrieveService {
 
         if (city == null) {
             // If city is not found in DB, call OpenStreetMap API
-            List<CityDTO> citySearchResponse = cityRetrievalService.searchCityByName(cityName, "json", 1);
+            List<CityDto> citySearchResponse = cityRetrievalService.searchCityByName(cityName, "json", 1);
             log.debug("API Response: {}", citySearchResponse);
 
             if (!citySearchResponse.isEmpty()) {
-                CityDTO retrieved = citySearchResponse.get(0);
+                CityDto retrieved = citySearchResponse.get(0);
                 // Get the first result from the response (which will be the best match)
                 // TODO: clone the bean
                 city = new City();

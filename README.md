@@ -20,7 +20,7 @@ This project demonstrates API integration, caching, and distance calculation usi
 
 ```mermaid
 classDiagram
-    class CityDTO {
+    class CityDto {
         - String name
         - String displayName
         - double latitude
@@ -31,18 +31,18 @@ classDiagram
         - double maxLongitude
     }
 
-    class ISSLocationDTO {
+    class ISSLocationDto {
         - long timestamp
         - double latitude
         - double longitude
     }
 
     class ISSDistanceResponse {
-        - CityDTO cityData
+        - CityDto cityData
         - ISSDistance issDistance
     }
 
-    class ISSDistance {
+    class ISSDistanceDto {
         - double kilometers
         - double miles
         - double nauticalMiles
@@ -54,11 +54,11 @@ classDiagram
         + getISSDistance(cityName: String): "/iss/cityName"
     }
 
-    API --> CityDTO : "GET /city/cityName"
-    API --> ISSLocationDTO : "GET /iss"
+    API --> CityDto : "GET /city/cityName"
+    API --> ISSLocationDto : "GET /iss"
     API --> ISSDistanceResponse : "GET /iss/cityName"
-    ISSDistanceResponse --> CityDTO : "Contains city details"
-    ISSDistanceResponse --> ISSDistance : "Contains distance info"
+    ISSDistanceResponse --> CityDto : "Contains city details"
+    ISSDistanceResponse --> ISSDistanceDto : "Contains distance info"
 
 ```
 

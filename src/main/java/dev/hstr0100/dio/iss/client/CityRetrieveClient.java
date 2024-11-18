@@ -1,6 +1,6 @@
 package dev.hstr0100.dio.iss.client;
 
-import dev.hstr0100.dio.iss.dto.CityDTO;
+import dev.hstr0100.dio.iss.dto.CityDto;
 import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface CityRetrieveClient {
 
     @GetMapping("/search")
-    List<CityDTO> searchCityByName(
+    List<CityDto> searchCityByName(
         @RequestParam("city") String cityName,
         @RequestParam(defaultValue = "json") String format,
         @RequestParam(defaultValue = "1") int limit);

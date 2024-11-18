@@ -1,6 +1,6 @@
 package dev.hstr0100.dio.iss.repository;
 
-import dev.hstr0100.dio.iss.model.City;
+import dev.hstr0100.dio.iss.entity.City;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

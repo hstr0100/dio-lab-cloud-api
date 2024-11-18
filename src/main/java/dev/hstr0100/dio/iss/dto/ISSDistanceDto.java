@@ -1,18 +1,18 @@
-package dev.hstr0100.dio.iss.model;
+package dev.hstr0100.dio.iss.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Gabriel / hstr0100 / vertx010
  */
-public class ISSDistance {
+public class ISSDistanceDto {
 
     private double kilometers;
     private double miles;
     @JsonProperty("nautical_miles")
     private double nauticalMiles;
 
-    public ISSDistance(double kilometers) {
+    public ISSDistanceDto(double kilometers) {
         this.kilometers = kilometers;
         this.miles = kilometers * 0.621371;  // km to miles
         this.nauticalMiles = kilometers * 0.539957;  // km to nautical miles

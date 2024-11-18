@@ -1,12 +1,12 @@
 package dev.hstr0100.dio.iss.service.impl;
 
 import dev.hstr0100.dio.iss.client.ISSClient;
-import dev.hstr0100.dio.iss.dto.ISSLocationDTO;
-import dev.hstr0100.dio.iss.handler.exception.CityNotFoundException;
-import dev.hstr0100.dio.iss.handler.exception.ISSServiceUnavailableException;
-import dev.hstr0100.dio.iss.model.City;
-import dev.hstr0100.dio.iss.model.DTOResponse;
-import dev.hstr0100.dio.iss.model.ISSDistanceResponse;
+import dev.hstr0100.dio.iss.dto.ISSLocationDto;
+import dev.hstr0100.dio.iss.exception.CityNotFoundException;
+import dev.hstr0100.dio.iss.exception.ISSServiceUnavailableException;
+import dev.hstr0100.dio.iss.entity.City;
+import dev.hstr0100.dio.iss.response.DTOResponse;
+import dev.hstr0100.dio.iss.response.ISSDistanceResponse;
 import dev.hstr0100.dio.iss.service.ISSLocationService;
 import dev.hstr0100.dio.iss.util.Haversine;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +25,8 @@ public class ISSLocationServiceImpl implements ISSLocationService {
     private ISSClient issLocationService;
 
     @Override
-    public DTOResponse<ISSLocationDTO> getCurrentISSLocationResponse() {
-        ISSLocationDTO issLocation = issLocationService.getCurrentLocation();
+    public DTOResponse<ISSLocationDto> getCurrentISSLocationResponse() {
+        ISSLocationDto issLocation = issLocationService.getCurrentLocation();
         if (issLocation == null) {
             throw new ISSServiceUnavailableException("ISS Location service is unavailable at the moment");
         }
@@ -41,7 +41,7 @@ public class ISSLocationServiceImpl implements ISSLocationService {
             throw new CityNotFoundException("City " + cityName + " does not exist");
         }
 
-        ISSLocationDTO issLocation = issLocationService.getCurrentLocation();
+        ISSLocationDto issLocation = issLocationService.getCurrentLocation();
 
         // Retrieve the ISS current location
         double issLat = issLocation.getIssPosition().getLatitude();
