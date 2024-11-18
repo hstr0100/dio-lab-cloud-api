@@ -1,8 +1,8 @@
 package dev.hstr0100.dio.iss.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.hstr0100.dio.iss.entity.City;
 import dev.hstr0100.dio.iss.dto.ISSDistanceDto;
+import dev.hstr0100.dio.iss.entity.City;
 
 /**
  * @author Gabriel / hstr0100 / vertx010

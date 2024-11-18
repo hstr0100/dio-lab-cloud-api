@@ -2,10 +2,10 @@ package dev.hstr0100.dio.iss.service.impl;
 
 import dev.hstr0100.dio.iss.client.CityRetrieveClient;
 import dev.hstr0100.dio.iss.dto.CityDto;
-import dev.hstr0100.dio.iss.exception.CityNotFoundException;
 import dev.hstr0100.dio.iss.entity.City;
-import dev.hstr0100.dio.iss.response.DTOResponse;
+import dev.hstr0100.dio.iss.exception.CityNotFoundException;
 import dev.hstr0100.dio.iss.repository.CityRepository;
+import dev.hstr0100.dio.iss.response.DTOResponse;
 import dev.hstr0100.dio.iss.service.CityRetrieveService;
 import java.util.List;
 import org.slf4j.Logger;
